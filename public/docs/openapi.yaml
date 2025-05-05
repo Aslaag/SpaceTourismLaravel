@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  title: 'Space Tourism API Documentation'
+  description: 'You can find all technology, crew members and destination from Space Tourism'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+tags:
+  -
+    name: CrewController
+    description: ''
+  -
+    name: CrewMember
+    description: ''
+  -
+    name: Destinations
+    description: ''
+  -
+    name: Technology
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []
+paths:
+  '/api/crewMembers/{id}':
+    get:
+      summary: "Voir une destination spécifique\n\nCette route retourne un membre d'équipage en fonction de son slug."
+      operationId: voirUneDestinationSpcifiqueCetteRouteRetourneUnMembreDquipageEnFonctionDeSonSlug
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - CrewController
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the crewMember.'
+        example: architecto
+        required: true
+        schema:
+          type: string
+  /api/crewMembers:
+    get:
+      summary: "Récupérer tous les membres d'équipage\n\nCette route retourne tous les membres d'équipage disponibles dans la base de données."
+      operationId: rcuprerTousLesMembresDquipageCetteRouteRetourneTousLesMembresDquipageDisponiblesDansLaBaseDeDonnes
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - CrewMember
+  /api/destinations:
+    get:
+      summary: "Récupérer toutes les destinations\n\nCette route retourne toutes les destinations disponibles dans la base de données."
+      operationId: rcuprerToutesLesDestinationsCetteRouteRetourneToutesLesDestinationsDisponiblesDansLaBaseDeDonnes
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Destinations
+  '/api/destinations/{id}':
+    get:
+      summary: "Voir une destination spécifique\n\nCette route retourne une destination en fonction de son slug."
+      operationId: voirUneDestinationSpcifiqueCetteRouteRetourneUneDestinationEnFonctionDeSonSlug
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Destinations
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the destination.'
+        example: architecto
+        required: true
+        schema:
+          type: string
+  /api/technologies:
+    get:
+      summary: "Récupérer toutes les technologies\n\nCette route retourne toutes les technologies disponibles dans la base de données."
+      operationId: rcuprerToutesLesTechnologiesCetteRouteRetourneToutesLesTechnologiesDisponiblesDansLaBaseDeDonnes
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Technology
+  '/api/technologies/{id}':
+    get:
+      summary: "Voir une technologie spécifique\n\nCette route retourne une technologie en fonction de son slug."
+      operationId: voirUneTechnologieSpcifiqueCetteRouteRetourneUneTechnologieEnFonctionDeSonSlug
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Technology
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the technology.'
+        example: architecto
+        required: true
+        schema:
+          type: string
